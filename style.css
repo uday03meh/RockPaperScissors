@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
 html, body {
+  font-family: 'Press Start 2P', sans-serif;
   height: 100%;
   width: 100%;
   padding: 0;
   margin:0;
+  box-sizing: border-box;
 }
 
 .wrapper {
@@ -31,8 +35,8 @@ html, body {
 
 .rpsButton:hover{
   background-color:#a7fbd4; 
-    border-width:4px;
-    border-color:#f8a0e5;
+  border-width:4px;
+  border-color:#f8a0e5;
 }
 
 .rpsButton:active {
@@ -42,11 +46,12 @@ html, body {
 }    
 
 #endGameButton{
-  height: 100px;
-  width: 100px;
-  margin-top:10px;
-  font-size: 48px;
-  border-radius: 30px;
+  border: none;
+  background-color: #eee;
+  color: #222;
+  font-size: 2rem;
+  font-family: inherit;
+  padding: 2rem 2rem;
   cursor: pointer; 
 }
 
@@ -61,22 +66,27 @@ html, body {
 }    
 
 .resultContainer {
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-align: center;
   margin: 30px auto;
 }
 
 #handsdiv{
-     height: 100px;
+  height: 100px;
   width: 100px;
   font-size: 48px;
   border-radius: 30px;
-    background-color:white
-    padding: auto;
-    margin:auto;
-    color:white
+  background-color:white
+  padding: auto;
+  margin:auto;
+  color:white
 }
 
 #scoreContainer{
-    display:flex;
+  display:flex;
+  margin: 10px auto;
+}
+
+#result {
+  margin-bottom: 30px;
 }
