@@ -53,10 +53,13 @@ function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
 
   finalresult = document.getElementById("result").innerText;
   if (parseInt(scoreBefore) > parseInt(scoreAfter)) {
+    document.getElementById("result").style.color = "red";
     document.getElementById("result").innerText = "You Lose!";
   } else if (parseInt(scoreBefore) < parseInt(scoreAfter)) {
+    document.getElementById("result").style.color = "green";
     document.getElementById("result").innerText = "You Won!";
   } else {
+    document.getElementById("result").style.color = "yellow";
     document.getElementById("result").innerText = "Draw";
   }
 }
