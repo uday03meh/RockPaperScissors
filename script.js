@@ -1,3 +1,11 @@
+let highScoreFromLocalStorage = localStorage.getItem("highScore");
+let highScoreEl=document.getElementById("highScore");
+let highScore=0;
+if (highScoreFromLocalStorage) {
+  highScore = highScoreFromLocalStorage;
+  highScoreEl.textContent="High score: " + highScore;
+}
+
 const choices = ["Rock", "Paper", "Scissors"];
 function getComputerChoice(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
@@ -52,6 +60,13 @@ function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
   }
 
   finalresult = document.getElementById("result").innerText;
+  if (parseInt(scoreAfter) > highScore) {
+    highScore = scoreAfter;
+    localStorage.setItem("highScore", highScore);
+    highScoreFromLocalStorage = localStorage.getItem("highScore");
+    highScoreEl.textContent="High score: " + highScoreFromLocalStorage;
+  }
+  localStorage.setItem("highScore", highScore);
   if (parseInt(scoreBefore) > parseInt(scoreAfter)) {
     document.getElementById("result").style.color = "red";
     document.getElementById("result").innerText = "You Lose!";
@@ -67,12 +82,14 @@ function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
 function onClickRPS(playerChoice) {
   computerChoice = getComputerChoice(choices);
   getResult(playerChoice, computerChoice);
+  
   showResult(scoreBefore, scoreAfter, playerChoice, computerChoice);
 }
 
 function playGame() {
   const rpsButtons = document.querySelectorAll(".rpsButton");
-
+  highScoreFromLocalStorage = localStorage.getItem("highScore");
+  highScoreEl.textContent="High score: " + highScoreFromLocalStorage;
   rpsButtons.forEach(
     (rpsButton) =>
       (rpsButton.onclick = () => {
@@ -82,8 +99,15 @@ function playGame() {
 }
 
 function endGame() {
+  localStorage.setItem("highScore", highScore);
+  highScoreFromLocalStorage = localStorage.getItem("highScore");
+  highScoreEl.textContent="High score: " + highScoreFromLocalStorage;
   const endGameButton = document.getElementById("endGameButton");
   endGameButton.onclick = () => {
+    highScore = 0;
+    localStorage.setItem("highScore",highScore);
+    highScoreFromLocalStorage = localStorage.getItem("highScore");
+    highScoreEl.textContent="High score: " + highScoreFromLocalStorage;
     document.getElementById("player-score").innerText = 0;
     document.getElementById("result").innerText = "";
     document.getElementById("hands").innerText = "";

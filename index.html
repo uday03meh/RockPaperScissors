@@ -10,22 +10,25 @@
 
 <body>
   <div class="wrapper">
-  <div class="buttons">
-    <button class="rpsButton" value="Rock" onclick="getResult()">✊</button>
-    <button class="rpsButton" value="Paper" onclick="getResult()">🤚</button>
-    <button class="rpsButton" value="Scissors" onclick="getResult()">✌</button>
-  </div>
-  <div class="resultContainer">
+    <div class="buttons">
+      <button class="rpsButton" value="Rock" onclick="getResult()">✊</button>
+      <button class="rpsButton" value="Paper" onclick="getResult()">🤚</button>
+      <button class="rpsButton" value="Scissors" onclick="getResult()">✌</button>
+    </div>
+
+    <div class="resultContainer">
       <div id = "scoreContainer">
-      <div id = "yourScore">Your Score:  </div>
-  <div id="player-score">0</div>
+        <div id = "yourScore">Your Score:  </div>
+        <div id="player-score">0</div>
       </div>
-          <div id = "handsdiv">
-  <div id="hands"></div>
+      <div id = "handsdiv">
+        <div id="hands"></div>
       </div>
-  <div id="result"></div>
-  <button id='endGameButton'>Again !</button>
-  </div>
+      <div id="result"></div>
+      <button id='endGameButton'>Again !</button>
+    </div>
+
+    <div id="highScore">High score: 0</div>
   </div>
   
   <script src="script.js"></script>
