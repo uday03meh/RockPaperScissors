@@ -76,7 +76,7 @@ html, body {
   width: 100px;
   font-size: 48px;
   border-radius: 30px;
-  background-color:white
+  background-color:white;
   padding: auto;
   margin:auto;
   color:white
@@ -89,4 +89,21 @@ html, body {
 
 #result {
   margin-bottom: 30px;
+}
+
+.start-item{
+   position: fixed;
+   top: 70px;
+   left: 90px;
+}
+
+.start-button{
+    height: 40px;
+    border: 2px transparent solid;
+    border-radius: 25px;
+    background-color: #EF8CF6;
+}
+.start-link{
+  text-decoration: none;
+  color: #080808;
 }
