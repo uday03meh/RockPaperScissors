@@ -1,9 +1,13 @@
-let highScoreFromLocalStorage = localStorage.getItem("highScore");
-let highScoreEl=document.getElementById("highScore");
-let highScore=0;
-if (highScoreFromLocalStorage) {
-  highScore = highScoreFromLocalStorage;
+let scores = [0,0];
+let scoresFromLocalStorage = JSON.parse(localStorage.getItem("scores"));
+let highScoreEl = document.getElementById("highScore");
+let highScore = 0;
+let scoreAfter = 0;
+if (scoresFromLocalStorage) {
+  highScore = parseInt(scoresFromLocalStorage[0]);
+  scoreAfter = parseInt(scoresFromLocalStorage[1]);
   highScoreEl.textContent="High score: " + highScore;
+  document.getElementById("player-score").innerText = scoreAfter;
 }
 
 const choices = ["Rock", "Paper", "Scissors"];
@@ -43,7 +47,9 @@ function getResult(playerChoice, computerChoice) {
       document.getElementById("player-score").innerText--;
     }
   }
-  scoreAfter = document.getElementById("player-score").innerText;
+  scoreAfter = parseInt(document.getElementById("player-score").innerText);
+  scores[1] = scoreAfter;
+  localStorage.setItem("scores", JSON.stringify(scores));
   return scoreBefore, scoreAfter;
 }
 
@@ -62,11 +68,12 @@ function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
   finalresult = document.getElementById("result").innerText;
   if (parseInt(scoreAfter) > highScore) {
     highScore = scoreAfter;
-    localStorage.setItem("highScore", highScore);
-    highScoreFromLocalStorage = localStorage.getItem("highScore");
-    highScoreEl.textContent="High score: " + highScoreFromLocalStorage;
+    scores[0] = highScore;
+    highScoreEl.textContent="High score: " + highScore;
   }
-  localStorage.setItem("highScore", highScore);
+  scores[1] = scoreAfter;
+  scores[0] = highScore;
+  localStorage.setItem("scores", JSON.stringify(scores));
   if (parseInt(scoreBefore) > parseInt(scoreAfter)) {
     document.getElementById("result").style.color = "red";
     document.getElementById("result").innerText = "You Lose!";
@@ -88,8 +95,6 @@ function onClickRPS(playerChoice) {
 
 function playGame() {
   const rpsButtons = document.querySelectorAll(".rpsButton");
-  highScoreFromLocalStorage = localStorage.getItem("highScore");
-  highScoreEl.textContent="High score: " + highScoreFromLocalStorage;
   rpsButtons.forEach(
     (rpsButton) =>
       (rpsButton.onclick = () => {
@@ -99,15 +104,14 @@ function playGame() {
 }
 
 function endGame() {
-  localStorage.setItem("highScore", highScore);
-  highScoreFromLocalStorage = localStorage.getItem("highScore");
-  highScoreEl.textContent="High score: " + highScoreFromLocalStorage;
+  scores[0] = highScore;
+  scores[1] = scoreAfter;
+  localStorage.setItem("scores", JSON.stringify(scores));
+  highScoreEl.textContent="High score: " + highScore;
   const endGameButton = document.getElementById("endGameButton");
   endGameButton.onclick = () => {
-    highScore = 0;
-    localStorage.setItem("highScore",highScore);
-    highScoreFromLocalStorage = localStorage.getItem("highScore");
-    highScoreEl.textContent="High score: " + highScoreFromLocalStorage;
+    localStorage.setItem("scores",JSON.stringify(scores));
+    highScoreEl.textContent="High score: " + highScore;
     document.getElementById("player-score").innerText = 0;
     document.getElementById("result").innerText = "";
     document.getElementById("hands").innerText = "";
