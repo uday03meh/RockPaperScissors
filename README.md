@@ -6,9 +6,9 @@ A simultaneous, zero-sum game, it has three possible outcomes: a draw, a win or 
 
 Rules:
 
-- 🪨Rock beats ✂️Scissors.
+- Rock beats ✂️Scissors.
 - ✂️Scissor beats 📄Paper.
-- 📄Paper beats 🪨Rock.
+- 📄Paper beats Rock.
 
 If both players choose the same shape the game is tied and is usually immediately replayed to break the tie.
 
