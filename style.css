@@ -29,7 +29,7 @@ html, body {
   height: 100px;
   width: 100px;
   font-size: 48px;
-  border-radius: 30px;
+  border-radius: 100px;
   cursor: pointer; 
 }
 
@@ -50,20 +50,28 @@ html, body {
   background-color: #eee;
   color: #222;
   font-size: 2rem;
-  font-family: inherit;
+  font-family: 'Press Start 2P', sans-serif;
   padding: 2rem 2rem;
-  cursor: pointer; 
+  cursor: pointer;
+  border-radius: 30px;
+  
 }
 
 #endGameButton:hover{
-    background-color:#e36666;
+  background-color:#a7fbd4; 
+  border-width:4px;
+  border-color:#f8a0e5;
+    
 }
 
 #endGameButton:active {
-  transform: translate(0px, 5px);
-  -webkit-transform: translate(0px, 5px);
-  box-shadow: 0px 1px 0px 0px;
-}    
+  background-color:#a7fbd4; 
+  border-width:4px;
+  border-color:#f8a0e5;
+} 
+#endGameButton:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}   
 
 .resultContainer {
   font-size: 2rem;
@@ -89,3 +97,4 @@ html, body {
 #result {
   margin-bottom: 30px;
 }
+
