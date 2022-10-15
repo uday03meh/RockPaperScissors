@@ -1,9 +1,14 @@
-let highScoreFromLocalStorage = localStorage.getItem("highScore");
-let highScoreEl=document.getElementById("highScore");
-let highScore=0;
-if (highScoreFromLocalStorage) {
-  highScore = highScoreFromLocalStorage;
+let scores = [0,0];
+let scoresFromLocalStorage = JSON.parse(localStorage.getItem("scores"));
+let highScoreEl = document.getElementById("highScore");
+let highScore = 0;
+let scoreAfter = 0;
+let displayMove = "";
+if (scoresFromLocalStorage) {
+  highScore = parseInt(scoresFromLocalStorage[0]);
+  scoreAfter = parseInt(scoresFromLocalStorage[1]);
   highScoreEl.textContent="High score: " + highScore;
+  document.getElementById("player-score").innerText = scoreAfter;
 }
 
 const choices = ["Rock", "Paper", "Scissors"];
@@ -43,7 +48,9 @@ function getResult(playerChoice, computerChoice) {
       document.getElementById("player-score").innerText--;
     }
   }
-  scoreAfter = document.getElementById("player-score").innerText;
+  scoreAfter = parseInt(document.getElementById("player-score").innerText);
+  scores[1] = scoreAfter;
+  localStorage.setItem("scores", JSON.stringify(scores));
   return scoreBefore, scoreAfter;
 }
 
@@ -51,12 +58,19 @@ let finalresult = document.getElementById("result").innerText;
 
 function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
   document.getElementById("hands").innerText;
-  if (computerChoice == "Rock") {
-    document.getElementById("hands").innerText = " ✊ ";
-  } else if (computerChoice == "Paper") {
-    document.getElementById("hands").innerText = " 🤚 ";
+  if (playerChoice == "Rock") {
+    displayMove = "✊";
+  } else if (playerChoice == "Paper") {
+    displayMove = "🤚";
   } else {
-    document.getElementById("hands").innerText = " ✌ ";
+    displayMove = "✌";
+  }
+  if (computerChoice == "Rock") {
+    document.getElementById("hands").innerText = displayMove + " ✊";
+  } else if (computerChoice == "Paper") {
+    document.getElementById("hands").innerText = displayMove + " 🤚";
+  } else {
+    document.getElementById("hands").innerText = displayMove + " ✌";
   }
   function playSound(e){
     if(e== "gameover")
@@ -71,11 +85,12 @@ function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
   finalresult = document.getElementById("result").innerText;
   if (parseInt(scoreAfter) > highScore) {
     highScore = scoreAfter;
-    localStorage.setItem("highScore", highScore);
-    highScoreFromLocalStorage = localStorage.getItem("highScore");
-    highScoreEl.textContent="High score: " + highScoreFromLocalStorage;
+    scores[0] = highScore;
+    highScoreEl.textContent="High score: " + highScore;
   }
-  localStorage.setItem("highScore", highScore);
+  scores[1] = scoreAfter;
+  scores[0] = highScore;
+  localStorage.setItem("scores", JSON.stringify(scores));
   if (parseInt(scoreBefore) > parseInt(scoreAfter)) {
     document.getElementById("result").style.color = "red";
     playSound("gameover");
@@ -101,8 +116,6 @@ function onClickRPS(playerChoice) {
 
 function playGame() {
   const rpsButtons = document.querySelectorAll(".rpsButton");
-  highScoreFromLocalStorage = localStorage.getItem("highScore");
-  highScoreEl.textContent="High score: " + highScoreFromLocalStorage;
   rpsButtons.forEach(
     (rpsButton) =>
       (rpsButton.onclick = () => {
@@ -112,15 +125,31 @@ function playGame() {
 }
 
 function endGame() {
-  localStorage.setItem("highScore", highScore);
-  highScoreFromLocalStorage = localStorage.getItem("highScore");
-  highScoreEl.textContent="High score: " + highScoreFromLocalStorage;
+  scores[0] = highScore;
+  scores[1] = scoreAfter;
+  localStorage.setItem("scores", JSON.stringify(scores));
+  highScoreEl.textContent="High score: " + highScore;
   const endGameButton = document.getElementById("endGameButton");
   endGameButton.onclick = () => {
+    scores[1] = 0;
+    localStorage.setItem("scores",JSON.stringify(scores));
+    highScoreEl.textContent="High score: " + highScore;
+    document.getElementById("player-score").innerText = 0;
+    document.getElementById("result").innerText = "";
+    document.getElementById("hands").innerText = "";
+  };
+}
+function resetGame() {
+  scores[0] = highScore;
+  scores[1] = scoreAfter;
+  localStorage.setItem("scores", JSON.stringify(scores));
+  highScoreEl.textContent="High score: " + highScore;
+  const resetButton = document.getElementById("resetButton");
+  resetButton.onclick = () => {
     highScore = 0;
-    localStorage.setItem("highScore",highScore);
-    highScoreFromLocalStorage = localStorage.getItem("highScore");
-    highScoreEl.textContent="High score: " + highScoreFromLocalStorage;
+    scores = [0,0];
+    localStorage.setItem("scores",scores);
+    highScoreEl.textContent="High score: " + highScore;
     document.getElementById("player-score").innerText = 0;
     document.getElementById("result").innerText = "";
     document.getElementById("hands").innerText = "";
@@ -129,3 +158,4 @@ function endGame() {
 
 playGame();
 endGame();
+resetGame();
