@@ -58,14 +58,14 @@ html, body {
 }
 
 #endGameButton:hover{
-  background-color:#a7fbd4; 
+  background-color:#e36666; 
   border-width:4px;
   border-color:#f8a0e5;
     
 }
 
 #endGameButton:active {
-  background-color:#a7fbd4; 
+  background-color:#b35050; 
   border-width:4px;
   border-color:#f8a0e5;
 } 
