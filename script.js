@@ -58,6 +58,15 @@ function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
   } else {
     document.getElementById("hands").innerText = " ✌ ";
   }
+  function playSound(e){
+    if(e== "gameover")
+    var audio = new Audio("sounds/" + e +".wav");
+    if(e== "Win")
+    var audio = new Audio("sounds/" + e +".mp3");
+    if(e== "Draw")
+    var audio = new Audio("sounds/" + e +".wav");
+    audio.play();
+}
 
   finalresult = document.getElementById("result").innerText;
   if (parseInt(scoreAfter) > highScore) {
@@ -69,12 +78,16 @@ function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
   localStorage.setItem("highScore", highScore);
   if (parseInt(scoreBefore) > parseInt(scoreAfter)) {
     document.getElementById("result").style.color = "red";
+    playSound("gameover");
     document.getElementById("result").innerText = "You Lose!";
+
   } else if (parseInt(scoreBefore) < parseInt(scoreAfter)) {
     document.getElementById("result").style.color = "green";
+    playSound("Win");
     document.getElementById("result").innerText = "You Won!";
   } else {
     document.getElementById("result").style.color = "yellow";
+    playSound("Draw")
     document.getElementById("result").innerText = "Draw";
   }
 }
