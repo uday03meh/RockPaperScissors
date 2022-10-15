@@ -3,6 +3,7 @@ let scoresFromLocalStorage = JSON.parse(localStorage.getItem("scores"));
 let highScoreEl = document.getElementById("highScore");
 let highScore = 0;
 let scoreAfter = 0;
+let displayMove = "";
 if (scoresFromLocalStorage) {
   highScore = parseInt(scoresFromLocalStorage[0]);
   scoreAfter = parseInt(scoresFromLocalStorage[1]);
@@ -57,12 +58,19 @@ let finalresult = document.getElementById("result").innerText;
 
 function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
   document.getElementById("hands").innerText;
-  if (computerChoice == "Rock") {
-    document.getElementById("hands").innerText = " ✊ ";
-  } else if (computerChoice == "Paper") {
-    document.getElementById("hands").innerText = " 🤚 ";
+  if (playerChoice == "Rock") {
+    displayMove = "✊";
+  } else if (playerChoice == "Paper") {
+    displayMove = "🤚";
   } else {
-    document.getElementById("hands").innerText = " ✌ ";
+    displayMove = "✌";
+  }
+  if (computerChoice == "Rock") {
+    document.getElementById("hands").innerText = displayMove + " ✊";
+  } else if (computerChoice == "Paper") {
+    document.getElementById("hands").innerText = displayMove + " 🤚";
+  } else {
+    document.getElementById("hands").innerText = displayMove + " ✌";
   }
 
   finalresult = document.getElementById("result").innerText;
@@ -110,6 +118,7 @@ function endGame() {
   highScoreEl.textContent="High score: " + highScore;
   const endGameButton = document.getElementById("endGameButton");
   endGameButton.onclick = () => {
+    scores[1] = 0;
     localStorage.setItem("scores",JSON.stringify(scores));
     highScoreEl.textContent="High score: " + highScore;
     document.getElementById("player-score").innerText = 0;

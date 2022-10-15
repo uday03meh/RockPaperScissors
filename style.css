@@ -81,7 +81,7 @@ html, body {
 
 #handsdiv{
   height: 100px;
-  width: 100px;
+  width: 400px;
   font-size: 48px;
   border-radius: 30px;
   padding: auto;
@@ -97,4 +97,3 @@ html, body {
 #result {
   margin-bottom: 30px;
 }
-
