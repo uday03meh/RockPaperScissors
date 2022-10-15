@@ -57,7 +57,7 @@ html, body {
   
 }
 
-#endGameButton:hover{
+#endGameButton:hover {
   background-color:#e36666; 
   border-width:4px;
   border-color:#f8a0e5;
@@ -69,9 +69,28 @@ html, body {
   border-width:4px;
   border-color:#f8a0e5;
 } 
-#endGameButton:focus {
+#endGameButton:focus{
   box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 }   
+
+#resetButton{
+  border: none;
+  background-color: #1c1c1c;
+  color: #eee;
+  font-size: 1rem;
+  font-family: 'Press Start 2P', sans-serif;
+  padding: 1rem 1rem;
+  cursor: pointer;
+  border-radius: 30px;
+  
+}
+
+ #resetButton:hover{
+  color: grey; 
+  border-width:4px;
+  border-color:#f8a0e5;
+    
+}
 
 .resultContainer {
   font-size: 2rem;

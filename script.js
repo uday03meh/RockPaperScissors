@@ -126,6 +126,23 @@ function endGame() {
     document.getElementById("hands").innerText = "";
   };
 }
+function resetGame() {
+  scores[0] = highScore;
+  scores[1] = scoreAfter;
+  localStorage.setItem("scores", JSON.stringify(scores));
+  highScoreEl.textContent="High score: " + highScore;
+  const resetButton = document.getElementById("resetButton");
+  resetButton.onclick = () => {
+    highScore = 0;
+    scores = [0,0];
+    localStorage.setItem("scores",scores);
+    highScoreEl.textContent="High score: " + highScore;
+    document.getElementById("player-score").innerText = 0;
+    document.getElementById("result").innerText = "";
+    document.getElementById("hands").innerText = "";
+  };
+}
 
 playGame();
 endGame();
+resetGame();
