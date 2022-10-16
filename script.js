@@ -1,4 +1,4 @@
-let scores = [0, 0];
+let scores = [0, 0]; // [highScore, currentScore]
 let scoresFromLocalStorage = JSON.parse(localStorage.getItem("scores"));
 let highScoreEl = document.getElementById("highScore");
 let highScore = 0;
@@ -49,8 +49,6 @@ function getResult(playerChoice, computerChoice) {
     }
   }
   scoreAfter = parseInt(document.getElementById("player-score").innerText);
-  scores[1] = scoreAfter;
-  localStorage.setItem("scores", JSON.stringify(scores));
   return scoreBefore, scoreAfter;
 }
 
@@ -85,13 +83,13 @@ function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
 
   finalresult = document.getElementById("result").innerText;
   if (parseInt(scoreAfter) > highScore) {
-    highScore = scoreAfter;
+    highScore = scoreAfter; // Updating high scores
     scores[0] = highScore;
     highScoreEl.textContent = "High score: " + highScore;
   }
   scores[1] = scoreAfter;
   scores[0] = highScore;
-  localStorage.setItem("scores", JSON.stringify(scores));
+  localStorage.setItem("scores", JSON.stringify(scores)); // Uploading the new scores into Local Storage
   if (parseInt(scoreBefore) > parseInt(scoreAfter)) {
     document.getElementById("result").style.color = "red";
     playSound("gameover");
@@ -132,26 +130,24 @@ function endGame() {
   highScoreEl.textContent = "High score: " + highScore;
   const endGameButton = document.getElementById("endGameButton");
   endGameButton.onclick = () => {
-    scores[1] = 0;
+    scoreAfter = 0;
+    scores[1] = scoreAfter;
     localStorage.setItem("scores", JSON.stringify(scores));
     highScoreEl.textContent = "High score: " + highScore;
-    document.getElementById("player-score").innerText = 0;
+    document.getElementById("player-score").innerText = scoreAfter;
     document.getElementById("result").innerText = "";
     document.getElementById("hands").innerText = "";
   };
 }
 function resetGame() {
-  scores[0] = highScore;
-  scores[1] = scoreAfter;
-  localStorage.setItem("scores", JSON.stringify(scores));
-  highScoreEl.textContent = "High score: " + highScore;
   const resetButton = document.getElementById("resetButton");
   resetButton.onclick = () => {
     highScore = 0;
+    scoreAfter = 0;
     scores = [0, 0];
-    localStorage.setItem("scores", scores);
+    localStorage.setItem("scores", JSON.stringify(scores));
     highScoreEl.textContent = "High score: " + highScore;
-    document.getElementById("player-score").innerText = 0;
+    document.getElementById("player-score").innerText = scoreAfter;
     document.getElementById("result").innerText = "";
     document.getElementById("hands").innerText = "";
   };
