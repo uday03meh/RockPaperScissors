@@ -115,6 +115,22 @@ function onClickRPS(playerChoice) {
 }
 
 function playGame() {
+  document.addEventListener("keydown", e => {
+    switch (e.key) {
+      case "r":
+        onClickRPS("Rock");
+        break;
+      case "p":
+        onClickRPS("Paper");
+        break;
+      case "s":
+        onClickRPS("Scissors");
+        break;
+    
+      default:
+        break;
+    }
+  })
   const rpsButtons = document.querySelectorAll(".rpsButton");
   rpsButtons.forEach(
     (rpsButton) =>

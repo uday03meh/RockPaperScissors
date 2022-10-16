@@ -92,6 +92,11 @@ html, body {
     
 }
 
+#keyboard-tip {
+  margin: 30px auto 0;
+  font-size: 0.7rem;
+}
+
 .resultContainer {
   font-size: 2rem;
   text-align: center;
