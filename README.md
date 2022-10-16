@@ -2,9 +2,11 @@
 
 ## About The Project
 
-A simultaneous, zero-sum game, it has three possible outcomes: a draw, a win or a loss. 
+A **simultaneous**, **zero-sum game**, it has three possible outcomes: a draw, a win or a loss. 
 
-Rules:
+[Video Demo](https://user-images.githubusercontent.com/54102389/196012602-46c388be-c06b-4222-96a4-73740bfad7a3.webm)
+
+### Rules:
 
 - Rock beats ✂️Scissors.
 - ✂️Scissor beats 📄Paper.
@@ -72,5 +74,4 @@ If both players choose the same shape the game is tied and is usually immediatel
 
 15. And you are done creating a pull request to this project.
 
-[Screencast from 10-16-2022 01:22:30 AM.webm](https://user-images.githubusercontent.com/54102389/196012602-46c388be-c06b-4222-96a4-73740bfad7a3.webm)
 
