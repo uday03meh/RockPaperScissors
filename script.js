@@ -1,4 +1,4 @@
-let scores = [0, 0];
+let scores = [0,0];
 let scoresFromLocalStorage = JSON.parse(localStorage.getItem("scores"));
 let highScoreEl = document.getElementById("highScore");
 let highScore = 0;
@@ -7,7 +7,7 @@ let displayMove = "";
 if (scoresFromLocalStorage) {
   highScore = parseInt(scoresFromLocalStorage[0]);
   scoreAfter = parseInt(scoresFromLocalStorage[1]);
-  highScoreEl.textContent = "High score: " + highScore;
+  highScoreEl.textContent="High score: " + highScore;
   document.getElementById("player-score").innerText = scoreAfter;
 }
 
@@ -56,7 +56,6 @@ function getResult(playerChoice, computerChoice) {
 
 let finalresult = document.getElementById("result").innerText;
 
-
 function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
   document.getElementById("hands").innerText;
   if (playerChoice == "Rock") {
@@ -73,21 +72,21 @@ function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
   } else {
     document.getElementById("hands").innerText = displayMove + " ✌";
   }
-  function playSound(e) {
-    if (e == "gameover")
-      var audio = new Audio("sounds/" + e + ".wav");
-    if (e == "Win")
-      var audio = new Audio("sounds/" + e + ".mp3");
-    if (e == "Draw")
-      var audio = new Audio("sounds/" + e + ".wav");
+  function playSound(e){
+    if(e== "gameover")
+    var audio = new Audio("sounds/" + e +".wav");
+    if(e== "Win")
+    var audio = new Audio("sounds/" + e +".mp3");
+    if(e== "Draw")
+    var audio = new Audio("sounds/" + e +".wav");
     audio.play();
-  }
+}
 
   finalresult = document.getElementById("result").innerText;
   if (parseInt(scoreAfter) > highScore) {
     highScore = scoreAfter;
     scores[0] = highScore;
-    highScoreEl.textContent = "High score: " + highScore;
+    highScoreEl.textContent="High score: " + highScore;
   }
   scores[1] = scoreAfter;
   scores[0] = highScore;
@@ -111,7 +110,7 @@ function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
 function onClickRPS(playerChoice) {
   computerChoice = getComputerChoice(choices);
   getResult(playerChoice, computerChoice);
-
+  
   showResult(scoreBefore, scoreAfter, playerChoice, computerChoice);
 }
 
@@ -119,9 +118,9 @@ function playGame() {
   const rpsButtons = document.querySelectorAll(".rpsButton");
   rpsButtons.forEach(
     (rpsButton) =>
-    (rpsButton.onclick = () => {
-      onClickRPS(rpsButton.value);
-    })
+      (rpsButton.onclick = () => {
+        onClickRPS(rpsButton.value);
+      })
   );
 }
 
@@ -129,12 +128,12 @@ function endGame() {
   scores[0] = highScore;
   scores[1] = scoreAfter;
   localStorage.setItem("scores", JSON.stringify(scores));
-  highScoreEl.textContent = "High score: " + highScore;
+  highScoreEl.textContent="High score: " + highScore;
   const endGameButton = document.getElementById("endGameButton");
   endGameButton.onclick = () => {
     scores[1] = 0;
-    localStorage.setItem("scores", JSON.stringify(scores));
-    highScoreEl.textContent = "High score: " + highScore;
+    localStorage.setItem("scores",JSON.stringify(scores));
+    highScoreEl.textContent="High score: " + highScore;
     document.getElementById("player-score").innerText = 0;
     document.getElementById("result").innerText = "";
     document.getElementById("hands").innerText = "";
@@ -144,13 +143,13 @@ function resetGame() {
   scores[0] = highScore;
   scores[1] = scoreAfter;
   localStorage.setItem("scores", JSON.stringify(scores));
-  highScoreEl.textContent = "High score: " + highScore;
+  highScoreEl.textContent="High score: " + highScore;
   const resetButton = document.getElementById("resetButton");
   resetButton.onclick = () => {
     highScore = 0;
-    scores = [0, 0];
-    localStorage.setItem("scores", scores);
-    highScoreEl.textContent = "High score: " + highScore;
+    scores = [0,0];
+    localStorage.setItem("scores",scores);
+    highScoreEl.textContent="High score: " + highScore;
     document.getElementById("player-score").innerText = 0;
     document.getElementById("result").innerText = "";
     document.getElementById("hands").innerText = "";
