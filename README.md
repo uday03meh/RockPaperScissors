@@ -5,7 +5,7 @@
 A simultaneous, zero-sum game, it has three possible outcomes: a draw, a win or a loss.
 
 <br/>
-You can checkout the project from [here](https://uday03meh.github.io/RockPaperScissors/)
+You can checkout the project from [here](uday03meh-rock-paper-scissors.netlify.app)
 <br/>
 
 [Screencast from 10-16-2022 01:22:30 AM.webm](https://user-images.githubusercontent.com/54102389/196012602-46c388be-c06b-4222-96a4-73740bfad7a3.webm)
