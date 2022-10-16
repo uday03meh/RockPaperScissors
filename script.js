@@ -120,10 +120,19 @@ function playGame() {
       case "r":
         onClickRPS("Rock");
         break;
+      case "R":
+        onClickRPS("Rock");
+        break;
       case "p":
         onClickRPS("Paper");
         break;
+      case "P":
+        onClickRPS("Paper");
+        break;
       case "s":
+        onClickRPS("Scissors");
+        break;
+      case "S":
         onClickRPS("Scissors");
         break;
     
