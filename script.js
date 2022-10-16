@@ -1,9 +1,15 @@
 let scores = [0, 0]; // [highScore, currentScore]
-let scoresFromLocalStorage = JSON.parse(localStorage.getItem("scores"));
 let highScoreEl = document.getElementById("highScore");
 let highScore = 0;
 let scoreAfter = 0;
 let displayMove = "";
+let scoresFromLocalStorage;
+if(localStorage.getItem("scores") == "0,0") {
+  scoresFromLocalStorage = null;
+} else {
+  scoresFromLocalStorage = JSON.parse(localStorage.getItem("scores"));
+}
+
 if (scoresFromLocalStorage) {
   highScore = parseInt(scoresFromLocalStorage[0]);
   scoreAfter = parseInt(scoresFromLocalStorage[1]);
@@ -144,7 +150,8 @@ function resetGame() {
   resetButton.onclick = () => {
     highScore = 0;
     scoreAfter = 0;
-    scores = [0, 0];
+    scores[0] = highScore;
+    scores[1] = scoreAfter;
     localStorage.setItem("scores", JSON.stringify(scores));
     highScoreEl.textContent = "High score: " + highScore;
     document.getElementById("player-score").innerText = scoreAfter;
