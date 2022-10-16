@@ -4,7 +4,9 @@
 
 A simultaneous, zero-sum game, it has three possible outcomes: a draw, a win or a loss. 
 
-Rules:
+[Screencast from 10-16-2022 01:22:30 AM.webm](https://user-images.githubusercontent.com/54102389/196012602-46c388be-c06b-4222-96a4-73740bfad7a3.webm)
+
+### Rules:
 
 - Rock beats ✂️Scissors.
 - ✂️Scissor beats 📄Paper.
