@@ -186,6 +186,10 @@ function resetGame() {
   };
 }
 
+// window.addEventListener('load', (e) => {
+//   document.getElementById("endGameButton").textContent = "Start!"
+// })
+
 playGame();
 endGame();
 resetGame();
