@@ -61,6 +61,7 @@ body {
 }
 
 .rpsButton:active {
+  background-color: #6ca389;
   transform: translate(0px, 5px);
   -webkit-transform: translate(0px, 5px);
   transition: all 0.3s ease;
@@ -92,6 +93,7 @@ body {
 }
 
 #endGameButton:active {
+  background-color: #ba4646;
   border-width: 4px;
   border-color: #f2a1e0;
   transform: translate(0px, 5px);
