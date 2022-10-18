@@ -78,11 +78,11 @@ function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
     document.getElementById("hands").innerText = displayMove + " ✌";
   }
   function playSound(e) {
-    if (e == "gameover")
+    if (e == "_gameover2")
       var audio = new Audio("sounds/" + e + ".wav");
-    if (e == "Win")
-      var audio = new Audio("sounds/" + e + ".mp3");
-    if (e == "Draw")
+    if (e == "Win3")
+      var audio = new Audio("sounds/" + e + ".wav");
+    if (e == "Draw2")
       var audio = new Audio("sounds/" + e + ".wav");
     audio.play();
   }
@@ -98,16 +98,16 @@ function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
   localStorage.setItem("scores", JSON.stringify(scores)); // Uploading the new scores into Local Storage
   if (parseInt(scoreBefore) > parseInt(scoreAfter)) {
     document.getElementById("result").style.color = "red";
-    playSound("gameover");
+    playSound("_gameover2");
     document.getElementById("result").innerText = "You Lose!";
 
   } else if (parseInt(scoreBefore) < parseInt(scoreAfter)) {
     document.getElementById("result").style.color = "green";
-    playSound("Win");
+    playSound("Win3");
     document.getElementById("result").innerText = "You Won!";
   } else {
     document.getElementById("result").style.color = "yellow";
-    playSound("Draw")
+    playSound("Draw2")
     document.getElementById("result").innerText = "Draw";
   }
 }
