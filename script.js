@@ -23,6 +23,11 @@ function getComputerChoice(choices) {
 }
 // console.log(getComputerChoice(choices));
 
+// To set score to zero on loading
+function setZero() {
+  document.getElementById("player-score").innerText = "0";
+}
+
 function getResult(playerChoice, computerChoice) {
   scoreBefore = document.getElementById("player-score").innerText;
   if (playerChoice == "Rock") {
