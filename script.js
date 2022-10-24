@@ -1,10 +1,13 @@
+// Declaring all variables
 let scores = [0, 0]; // [highScore, currentScore]
 let highScoreEl = document.getElementById("highScore");
 let highScore = 0;
 let scoreAfter = 0;
 let displayMove = "";
 let scoresFromLocalStorage;
-if(localStorage.getItem("scores") == "0,0") {
+
+
+if (localStorage.getItem("scores") == "0,0") {
   scoresFromLocalStorage = null;
 } else {
   scoresFromLocalStorage = JSON.parse(localStorage.getItem("scores"));
@@ -17,6 +20,7 @@ if (scoresFromLocalStorage) {
   document.getElementById("player-score").innerText = scoreAfter;
 }
 
+// Function to generate random choices
 const choices = ["Rock", "Paper", "Scissors"];
 function getComputerChoice(choices) {
   return choices[Math.floor(Math.random() * choices.length)];
@@ -28,6 +32,7 @@ function setZero() {
   document.getElementById("player-score").innerText = "0";
 }
 
+// Function for changing scores after every click
 function getResult(playerChoice, computerChoice) {
   scoreBefore = document.getElementById("player-score").innerText;
   if (playerChoice == "Rock") {
@@ -65,7 +70,7 @@ function getResult(playerChoice, computerChoice) {
 
 let finalresult = document.getElementById("result").innerText;
 
-
+// Function for displaying player and computer choices
 function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
   document.getElementById("hands").innerText;
   if (playerChoice == "Rock") {
@@ -82,16 +87,18 @@ function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
   } else {
     document.getElementById("hands").innerText = displayMove + " ✌";
   }
+
+
+  // Function for sounds on button click
   function playSound(e) {
-    if (e == "_gameover2")
-      var audio = new Audio("sounds/" + e + ".wav");
-    if (e == "Win3")
-      var audio = new Audio("sounds/" + e + ".wav");
-    if (e == "Draw2")
-      var audio = new Audio("sounds/" + e + ".wav");
+    if (e == "_gameover2") var audio = new Audio("sounds/" + e + ".wav");
+    if (e == "Win3") var audio = new Audio("sounds/" + e + ".wav");
+    if (e == "Draw2") var audio = new Audio("sounds/" + e + ".wav");
     audio.play();
   }
 
+
+  // High Score update
   finalresult = document.getElementById("result").innerText;
   if (parseInt(scoreAfter) > highScore) {
     highScore = scoreAfter; // Updating high scores
@@ -101,18 +108,19 @@ function showResult(scoreBefore, scoreAfter, playerChoice, computerChoice) {
   scores[1] = scoreAfter;
   scores[0] = highScore;
   localStorage.setItem("scores", JSON.stringify(scores)); // Uploading the new scores into Local Storage
+  
+  // Changing result's colors and playing sounds based on Win, Draw or Lose
   if (parseInt(scoreBefore) > parseInt(scoreAfter)) {
     document.getElementById("result").style.color = "red";
     playSound("_gameover2");
     document.getElementById("result").innerText = "You Lose!";
-
   } else if (parseInt(scoreBefore) < parseInt(scoreAfter)) {
     document.getElementById("result").style.color = "green";
     playSound("Win3");
     document.getElementById("result").innerText = "You Won!";
   } else {
     document.getElementById("result").style.color = "yellow";
-    playSound("Draw2")
+    playSound("Draw2");
     document.getElementById("result").innerText = "Draw";
   }
 }
@@ -124,8 +132,9 @@ function onClickRPS(playerChoice) {
   showResult(scoreBefore, scoreAfter, playerChoice, computerChoice);
 }
 
+// Function to play game using R, P and S keys on keyboard
 function playGame() {
-  document.addEventListener("keydown", e => {
+  document.addEventListener("keydown", (e) => {
     switch (e.key) {
       case "r":
         onClickRPS("Rock");
@@ -150,16 +159,17 @@ function playGame() {
         break;
     }
   });
-  
+
   const rpsButtons = document.querySelectorAll(".rpsButton");
   rpsButtons.forEach(
     (rpsButton) =>
-    (rpsButton.onclick = () => {
-      onClickRPS(rpsButton.value);
-    })
+      (rpsButton.onclick = () => {
+        onClickRPS(rpsButton.value);
+      })
   );
 }
 
+// End Game function to reset score to zero and keeps high score same
 function endGame() {
   scores[0] = highScore;
   scores[1] = scoreAfter;
@@ -176,6 +186,9 @@ function endGame() {
     document.getElementById("hands").innerText = "";
   };
 }
+
+// Reset Game function to reset score and high score to zero
+
 function resetGame() {
   const resetButton = document.getElementById("resetButton");
   resetButton.onclick = () => {
@@ -191,10 +204,8 @@ function resetGame() {
   };
 }
 
-// window.addEventListener('load', (e) => {
-//   document.getElementById("endGameButton").textContent = "Start!"
-// })
 
+// Calling out functions which are not attached to buttons
 playGame();
 endGame();
 resetGame();

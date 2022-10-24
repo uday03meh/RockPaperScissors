@@ -105,7 +105,7 @@ body {
 #resetButton {
   border: none;
   background-color: #1c1c1c;
-  color: #FF3737;
+  color: #9e0a0a;
   font-size: 1rem;
   font-family: "Press Start 2P", sans-serif;
   padding: 1rem 1rem;
@@ -114,10 +114,14 @@ body {
 }
 
 #resetButton:hover {
-  color: #CD0D0D;
+  color: #FF3737;
   border-width: 4px;
   border-color: #f8a0e5;
   transition: all 0.3s ease;
+}
+
+#resetButton:active {
+  color: rgb(189, 184, 184);
 }
 
 #keyboard-tip {
