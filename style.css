@@ -42,7 +42,7 @@ body {
 
 .buttons {
     display: flex;
-    gap: 20px;
+    gap: 40px;
     /* border: 2px solid green; */
 }
 
