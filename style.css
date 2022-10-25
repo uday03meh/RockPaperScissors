@@ -179,23 +179,24 @@ body {
 .newButton {
     font-family: "Press Start 2P", sans-serif;
     color: #b8c5bf;
-    font-size: 1.2rem;
+    font-size: 1rem;
     background-color: transparent;
     cursor: pointer;
-    border: 2px solid rgb(14, 39, 13);
+    border: none;
     border-radius: 3rem;
     padding: 12px;
     margin: 0px 0 35px 0;
 }
 
-.newButton:hover {
-    color: rgb(71, 255, 65);
-    background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
-    box-shadow: 0 4px 15px 0 rgba(32, 185, 129, 0.75);
-    background-position: 100% 0;
-    -o-transition: all .4s ease-in-out;
-    -webkit-transition: all .4s ease-in-out;
-    transition: all .4s ease-in-out;
-    transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
-    transform: translateY(15%);
+.newButton a {
+    text-decoration: none;
+    color: #b8c5bf;
+}
+
+.newButton a:hover {
+    color: #7b8480;
+}
+
+.newButton a:active {
+    color: #fff;
 }

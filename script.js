@@ -205,9 +205,6 @@ function resetGame() {
     };
 }
 
-function navigate() {
-    window.location = 'https://github.com/uday03meh/RockPaperScissors';
-}
 
 // Calling out functions which are not attached to buttons
 playGame();
