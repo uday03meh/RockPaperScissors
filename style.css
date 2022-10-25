@@ -67,6 +67,91 @@ body {
     transition: all 0.3s ease;
     /*   box-shadow: 0px 1px 0px 0px; */
 }
+/*  */
+ul {
+  list-style: none;
+  padding: 0px;
+  transition: all 0.5s 0.3s ease;
+}
+
+ul li {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  background-color: rgb(184, 184, 184);
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+ul li .fa {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  color: #fff;
+}
+
+ul li.github {
+  background-color: rgb(184, 184, 184);
+}
+
+.slider {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 51px;
+  width: 0px;
+  height: 50px;
+  background-color: rgb(184, 184, 184);
+  border-radius: 3px;
+  transition: all 0.5s 0.3s ease;
+}
+
+.slider p {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 900;
+  color: black;
+  text-align: center;
+  line-height: 50px;
+  opacity: 0;
+  margin: 0px;
+  display: none;
+  transition: all 2s ease;
+}
+
+ul li:hover .slider {
+  width: 180px;
+  transition: all 0.5s ease;
+}
+
+ul li:hover .slider p {
+  opacity: 1;
+  transition: all 3s ease;
+  display: block;
+}
+
+ul li:hover .github-icon-container {
+  margin: 0px 0px 0px -181px;
+  transition: all 3s ease;
+}
+
+/*  */
+
+#githubButton {
+  background-color: rgb(184, 184, 184);
+  color: #222;
+  font-size: 1rem;
+  margin: auto;
+  font-family: "Press Start 2P", sans-serif;
+  padding: 18rem 1rem;
+  cursor: pointer;
+  border-radius: 30px;
+  height: 100px;
+}
 
 #end-game-button-div {
     margin: 20px auto 0px;
@@ -116,6 +201,21 @@ body {
 }
 
 #resetButton {
+  border: none;
+  background-color: #1c1c1c;
+  color: #ff3737;
+  font-size: 1rem;
+  font-family: "Press Start 2P", sans-serif;
+  padding: 1rem 1rem;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+#resetButton:hover {
+  color: #cd0d0d;
+  border-width: 4px;
+  border-color: #f8a0e5;
+  transition: all 0.3s ease;
     border: none;
     background-color: #1c1c1c;
     color: #9e0a0a;
@@ -124,13 +224,6 @@ body {
     padding: 1rem 1rem;
     cursor: pointer;
     border-radius: 30px;
-}
-
-#resetButton:hover {
-    color: #FF3737;
-    border-width: 4px;
-    border-color: #f8a0e5;
-    transition: all 0.3s ease;
 }
 
 #resetButton:active {
