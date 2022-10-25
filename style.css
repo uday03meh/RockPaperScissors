@@ -1,179 +1,201 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
-
 html,
 body {
-  font-family: "Press Start 2P", sans-serif;
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  background: #1c1c1c;
-  text-align: center;
-  box-sizing: border-box;
+    font-family: "Press Start 2P", sans-serif;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: #1c1c1c;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 #heading {
-  /* border: 2px solid yellow; */
-  padding-top: 40px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+    /* border: 2px solid yellow; */
+    padding-top: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .wrapper {
-  background: #1c1c1c;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 80%;
-  margin: auto;
-  height: 100%;
-  flex-direction: column;
+    background: #1c1c1c;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    height: 100%;
+    flex-direction: column;
 }
 
 .wrapper-child {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  /* animation: fadeIn 3s ease-in 1s; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    /* animation: fadeIn 3s ease-in 1s; */
 }
 
 .buttons {
-  display: flex;
-  gap: 20px;
-  /* border: 2px solid green; */
+    display: flex;
+    gap: 20px;
+    /* border: 2px solid green; */
 }
 
 .rpsButton {
-  height: 100px;
-  width: 100px;
-  font-size: 48px;
-  border-radius: 100px;
-  cursor: pointer;
+    height: 100px;
+    width: 100px;
+    font-size: 48px;
+    border-radius: 100px;
+    cursor: pointer;
 }
 
 .rpsButton:hover {
-  background-color: #a7fbd4;
-  border-width: 4px;
-  border-color: #f8a0e5;
+    background-color: #a7fbd4;
+    border-width: 4px;
+    border-color: #f8a0e5;
 }
 
 .rpsButton:active {
-  background-color: #6ca389;
-  transform: translate(0px, 5px);
-  -webkit-transform: translate(0px, 5px);
-  transition: all 0.3s ease;
-  /*   box-shadow: 0px 1px 0px 0px; */
+    background-color: #6ca389;
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    transition: all 0.3s ease;
+    /*   box-shadow: 0px 1px 0px 0px; */
 }
 
 #end-game-button-div {
-  margin: 20px auto 0px;
-  /* border: 2px solid yellow; */
+    margin: 20px auto 0px;
+    /* border: 2px solid yellow; */
 }
 
 #endGameButton {
-  background-color: rgb(184, 184, 184);
-  color: #222;
-  font-size: 2rem;
-  margin: auto;
-  font-family: "Press Start 2P", sans-serif;
-  padding: 2rem 2rem;
-  cursor: pointer;
-  border-radius: 30px;
-  height: 100px;
+    background-color: rgb(184, 184, 184);
+    color: #222;
+    font-size: 2rem;
+    margin: auto;
+    font-family: "Press Start 2P", sans-serif;
+    padding: 2rem 2rem;
+    cursor: pointer;
+    border-radius: 30px;
+    height: 100px;
 }
 
 #endGameButton:hover {
-  background-color: #ff5d5d;
-  border-width: 4px;
-  border-color: #d16fbb;
-  transition: all 0.3s ease;
+    background-color: #ff5d5d;
+    border-width: 4px;
+    border-color: #d16fbb;
+    transition: all 0.3s ease;
 }
 
 #endGameButton:hover:after {
-  background-color: rgb(184, 184, 184);
-  border-radius: 30px;
-  border-radius: 30px;
-  border: 2px solid #222;
+    background-color: rgb(184, 184, 184);
+    border-radius: 30px;
+    border-radius: 30px;
+    border: 2px solid #222;
 }
 
 #endGameButton:active:after {
-  background-color: rgb(184, 184, 184);
-  border-radius: 30px;
-  border-radius: 30px;
-  border: 2px solid #222;
+    background-color: rgb(184, 184, 184);
+    border-radius: 30px;
+    border-radius: 30px;
+    border: 2px solid #222;
 }
 
 #endGameButton:active {
-  background-color: #ba4646;
-  border-width: 4px;
-  border-color: #f2a1e0;
-  transform: translate(0px, 5px);
-  -webkit-transform: translate(0px, 5px);
-  transition: all 0.3s ease;
+    background-color: #ba4646;
+    border-width: 4px;
+    border-color: #f2a1e0;
+    transform: translate(0px, 5px);
+    -webkit-transform: translate(0px, 5px);
+    transition: all 0.3s ease;
 }
 
 #resetButton {
-  border: none;
-  background-color: #1c1c1c;
-  color: #9e0a0a;
-  font-size: 1rem;
-  font-family: "Press Start 2P", sans-serif;
-  padding: 1rem 1rem;
-  cursor: pointer;
-  border-radius: 30px;
+    border: none;
+    background-color: #1c1c1c;
+    color: #9e0a0a;
+    font-size: 1rem;
+    font-family: "Press Start 2P", sans-serif;
+    padding: 1rem 1rem;
+    cursor: pointer;
+    border-radius: 30px;
 }
 
 #resetButton:hover {
-  color: #FF3737;
-  border-width: 4px;
-  border-color: #f8a0e5;
-  transition: all 0.3s ease;
+    color: #FF3737;
+    border-width: 4px;
+    border-color: #f8a0e5;
+    transition: all 0.3s ease;
 }
 
 #resetButton:active {
-  color: rgb(189, 184, 184);
+    color: rgb(189, 184, 184);
 }
 
 #keyboard-tip {
-  margin: 30px auto 0px;
-  font-size: 0.7rem;
-  /* border: 2px solid red; */
+    margin: 30px auto 0px;
+    font-size: 0.7rem;
+    /* border: 2px solid red; */
 }
 
 .resultContainer {
-  font-size: 2rem;
-  text-align: center;
-  margin: 40px auto 30px;
-  /* border: 2px solid red; */
+    font-size: 2rem;
+    text-align: center;
+    margin: 40px auto 30px;
+    /* border: 2px solid red; */
 }
 
 #handsdiv {
-  height: 70px;
-  width: 243px;
-  font-size: 48px;
-  border-radius: 30px;
-  padding: 0px;
-  margin: 20px auto;
-  color: white;
-  /* border: 2px solid brown; */
+    height: 70px;
+    width: 243px;
+    font-size: 48px;
+    border-radius: 30px;
+    padding: 0px;
+    margin: 20px auto;
+    color: white;
+    /* border: 2px solid brown; */
 }
 
 #scoreContainer {
-  display: flex;
-  margin: auto;
-  /* border: 2px solid blue; */
+    display: flex;
+    margin: auto;
+    /* border: 2px solid blue; */
 }
 
 #yourScore {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 #result {
-  /* border: 2px solid green; */
-  height: 32px;
+    /* border: 2px solid green; */
+    height: 32px;
 }
 
+.newButton {
+    font-family: "Press Start 2P", sans-serif;
+    color: #b8c5bf;
+    font-size: 1.2rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid rgb(14, 39, 13);
+    border-radius: 3rem;
+    padding: 12px;
+    margin: 0px 0 35px 0;
+}
+
+.newButton:hover {
+    color: rgb(71, 255, 65);
+    background-image: linear-gradient(to right, #29323c, #485563, #2b5876, #4e4376);
+    box-shadow: 0 4px 15px 0 rgba(32, 185, 129, 0.75);
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
+    transform: translateY(15%);
+}
