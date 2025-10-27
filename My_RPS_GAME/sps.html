@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Stone Paper Scissors</title>
+        <link href="sps.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <header>Rock Paper Scissors</header>
+    <div class="final hidden">
+        <p id="win">Winner</p>
+    </div>
+    <div class="choices">
+        <div class="choice" id="rock"><img src="rock.png"></div>
+        <div class="choice" id="paper"><img src="paper.png"></div>
+        <div class="choice" id="scissors"><img src="scissors.png"></div>
+    </div>
+
+    <div class="score-board">
+        <div class="score">
+            <p id="user-score">0</p>
+            <p>You</p>
+        </div>
+        <div class="score">
+            <p id="comp-score">0</p>
+            <p>Comp</p>
+        </div>
+    </div>
+
+    
+    <div class="message-container">
+        <div class="result hide">
+            <p id="res">Result</p><br><br><br>
+        </div>
+    
+        <p id="msg"><a href="sps.html">New Game</a></p>
+    </div>
+    <script src="sps.js"></script>
+</body>
+</html>
